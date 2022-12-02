@@ -13,6 +13,8 @@ jobs:
         os: [ ubuntu-20.04, windows-latest ]
       fail-fast: false
     steps:
+      - name: Display openssl&libssl-dev versions
+        run: dpkg -l openssl libssl-dev | grep '^ii' | cut -c5-
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
